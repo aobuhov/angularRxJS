@@ -6,5 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angularRxJS';
+  counter = 0;
+  undatedAt?: number;
+
+  get cannotDecrease(): boolean {
+    return this.counter <= 0;
+  }
+
+  increase(): void {
+    this.undatedAt = Date.now();
+    this.counter++;
+  }
+  decrease(): void {
+    this.undatedAt = Date.now();
+    this.counter--;
+  }
+
+  clear(): void {
+    this.undatedAt = Date.now();
+    this.counter = 0;
+  }
+
+
 }
