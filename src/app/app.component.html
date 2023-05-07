@@ -2,4 +2,4 @@
 <button class="fz-60 m-20 p-50" (click)="decrease()" [disabled]="cannotDecrease$ | async">-1</button>
 <button class="fz-60 m-20 p-50" (click)="clear()" [disabled]="cannotDecrease$ | async">Reset</button>
 <p class="fz-60">Counter {{count$ | async}}</p>
-<p *ngIf="undatedAt" class="fz-60">updated at {{undatedAt|date:"HH:mm:ss.SSS dd/MM/yyyy"}}</p>
+<p *ngIf="updatedAt$ | async" class="fz-60">updated at {{updatedAt$ | async |date:"HH:mm:ss.SSS dd/MM/yyyy"}}</p>
